@@ -3,7 +3,6 @@
 import type React from "react"
 import { useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
 import api from "@/lib/axios"
 import {
     Table,
@@ -14,14 +13,8 @@ import {
     TableHeader,
     TableRow,
 } from "@/components/ui/table"
+import { Student } from "@/types/Student"
 
-interface Student {
-    id: string
-    math: number
-    physics: number
-    chemistry: number
-    total: number
-}
 
 export default function Dashboard() {
     const [top10groupStudent, setTop10groupStudent] = useState<Student[]>([])

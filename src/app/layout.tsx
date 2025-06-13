@@ -3,49 +3,13 @@ import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import "../styles/globals.css"
 import { AppSidebar } from "@/components/app-sidebar"
-import Link from "next/link"
+import { DesktopSidebar } from "@/components/desktop-sidebar"
 
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: "G-Scores Management System",
   description: "Student score management and reporting system",
-}
-
-function DesktopSidebar() {
-  return (
-    <aside className="hidden md:block fixed left-0 top-16 w-60 lg:w-64 h-[calc(100vh-4rem)] bg-gradient-to-b from-yellow-400 via-yellow-500 to-teal-500 z-40">
-      <div className="p-4 md:p-6 h-full overflow-y-auto">
-        <h2 className="text-lg md:text-xl font-bold text-gray-800 mb-4 md:mb-6">Menu</h2>
-        <nav className="space-y-1 md:space-y-2">
-          <Link
-            href="/"
-            className="block w-full text-left px-3 py-2 rounded text-gray-800 font-medium hover:bg-black/10 transition-colors text-sm md:text-base"
-          >
-            Dashboard
-          </Link>
-          <Link
-            href="/search-scores"
-            className="block w-full text-left px-3 py-2 rounded text-gray-800 font-medium hover:bg-black/10 transition-colors text-sm md:text-base"
-          >
-            Search Scores
-          </Link>
-          <Link
-            href="/reports"
-            className="block w-full text-left px-3 py-2 rounded text-gray-800 font-medium hover:bg-black/10 transition-colors text-sm md:text-base"
-          >
-            Reports
-          </Link>
-          <Link
-            href="/settings"
-            className="block w-full text-left px-3 py-2 rounded text-gray-800 font-medium hover:bg-black/10 transition-colors text-sm md:text-base"
-          >
-            Settings
-          </Link>
-        </nav>
-      </div>
-    </aside>
-  )
 }
 
 export default function RootLayout({

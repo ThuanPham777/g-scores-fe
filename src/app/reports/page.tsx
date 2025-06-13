@@ -6,6 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Bar, BarChart, ResponsiveContainer, XAxis, YAxis, Tooltip, Legend, CartesianGrid } from 'recharts';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Skeleton } from '@/components/ui/skeleton';
+import { ReportData } from '@/types/report';
 
 const Subjects = [
     'math',
@@ -19,13 +20,6 @@ const Subjects = [
     'civics'
 ];
 
-interface ReportData {
-    subject: string;
-    ">=8": number;
-    "6-7.99": number;
-    "4-5.99": number;
-    "<4": number;
-}
 
 export default function Reports() {
     const [reportData, setReportData] = useState<ReportData[]>([]);
@@ -208,13 +202,13 @@ export default function Reports() {
                                         <XAxis dataKey="name" />
                                         <YAxis />
                                         <Tooltip
-                                            formatter={(value) => [`${value.toLocaleString()} candiate`, 'amount']}
-                                            labelFormatter={(value) => `Nhóm: ${value}`}
+                                            formatter={(value) => [`${value.toLocaleString()} candiates`, 'Total']}
+                                            labelFormatter={(value) => `Group: ${value}`}
                                         />
                                         <Legend />
                                         <Bar
                                             dataKey="value"
-                                            name="amount"
+                                            name="total"
                                             fill="#3b82f6"
                                             radius={[4, 4, 0, 0]}
                                         />
