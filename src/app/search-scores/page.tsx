@@ -39,7 +39,7 @@ export default function SearchScores() {
     const scoreFields: { label: string; key: keyof StudentScore; isForeignLang?: boolean }[] = [
         { label: "Math", key: "math" },
         { label: "Literature", key: "literature" },
-        { label: "Foreign Language", key: "foreignLanguage", isForeignLang: true },
+        { label: "Foreign Language", key: "foreignlanguage", isForeignLang: true },
         { label: "Physics", key: "physics" },
         { label: "Chemistry", key: "chemistry" },
         { label: "Biology", key: "biology" },
@@ -97,8 +97,8 @@ export default function SearchScores() {
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 text-sm">
                             {scoreFields.map((field) => {
                                 const value = field.isForeignLang
-                                    ? searchResults?.foreignLanguage && searchResults?.foreignLangCode
-                                        ? `${searchResults.foreignLanguage} (${searchResults.foreignLangCode})`
+                                    ? searchResults?.foreignlanguage && searchResults?.foreignlangcode
+                                        ? `${searchResults.foreignlanguage} (${searchResults.foreignlangcode})`
                                         : "Unknown"
                                     : searchResults?.[field.key] ?? "Unknown"
 

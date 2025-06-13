@@ -11,7 +11,7 @@ import { ReportData } from '@/types/report';
 const Subjects = [
     'math',
     'literature',
-    'foreignLanguage',
+    'foreignlanguage',
     'physics',
     'chemistry',
     'biology',
@@ -57,7 +57,7 @@ export default function Reports() {
         const subjectNames: Record<string, string> = {
             math: 'math',
             literature: 'literature',
-            foreignLanguage: 'foreign language',
+            foreignlanguage: 'foreign language',
             physics: 'physics',
             chemistry: 'chemistry',
             biology: 'biology',
